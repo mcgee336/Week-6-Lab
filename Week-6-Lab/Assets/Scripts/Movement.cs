@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float mainThrust = 100f;
-    [SerializeField] float rotationThrust = 1f;
+    [SerializeField] float mainThrust = 1000f;
+    [SerializeField] float rotationThrust = 100f;
 
     Rigidbody rb;
 
@@ -43,7 +43,9 @@ public class Movement : MonoBehaviour
     }
     public void ApplyRotation(float rotationThisFrame)
     {
+        rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+        rb.freezeRotation = false;  
     }
 
 
