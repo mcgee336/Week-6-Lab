@@ -10,7 +10,7 @@ public class ScoreLife : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         GetComponent<MeshRenderer>().material.color = Color.green;
-        if (other.gameObject.tag != "Start/End")
+        if (other.gameObject.tag != "Friendly")
         {
             life--;
             GetComponent<MeshRenderer>().material.color = Color.yellow;
